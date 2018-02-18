@@ -24,6 +24,7 @@ class ApplicationController < Sinatra::Base
 
   get '/sessions/login' do
     erb :'sessions/login'
+    status 200
   end
 
   post '/sessions' do
@@ -42,6 +43,7 @@ class ApplicationController < Sinatra::Base
     @user = User.find_by(id: session[:id])
     binding.pry
     erb :'/users/home'
+    status 200
   end
 
 end
